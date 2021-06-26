@@ -2,8 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
+const auth = require('./routes/api/auth.routes.js')
 
 const courses = require('./routes/api/courses');
+
 
 const app = express();
 
@@ -23,6 +25,8 @@ mongoose.set('debug', true);
 
 // Use Routes
 app.use('/api/courses', courses);
+app.use(express.json());
+app.use('/api/auth', auth);
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
