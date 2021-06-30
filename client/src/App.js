@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import Createschedule from './components/createSchedule';
+import ViewSchedule from './components/viewSchedule';
 import ApplicantApply from './components/ApplicantApply'
 
 
@@ -16,8 +17,8 @@ function App() {
       <div className="App">
         <AppNavbar/>
         <Container>
-         <ApplicantApply/>
-         
+         <CourseList></CourseList>
+         <CourseModal></CourseModal>
         </Container>
       </div>
     </Provider>

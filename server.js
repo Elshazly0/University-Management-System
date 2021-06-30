@@ -7,6 +7,7 @@ const courses = require('./routes/api/courses');
 const applicant=require('./routes/api/applicant');
 var cors = require('cors');
 const app = express();
+const scheduleroutes = require ('./routes/api/schedule'); 
 
 // Bodyparser Middleware
 app.use(bodyParser.json());
@@ -29,7 +30,7 @@ app.use('/api/courses', courses);
 app.use(express.json());
 app.use('/api/auth', auth);
 app.use('/api/applicant',applicant)
-
+app.use('/api/schedule',scheduleroutes);
 
 
 if (process.env.NODE_ENV === 'production') {
