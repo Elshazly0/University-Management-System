@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A simple application for the \"Student Information System\" portal",
   "main": "server.js",
-
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
@@ -23,9 +22,11 @@
   },
   "homepage": "https://github.com/Elshazly0/University-Management-System#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "concurrently": "^6.2.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.12.0",
     "jsonwebtoken": "^8.5.1",

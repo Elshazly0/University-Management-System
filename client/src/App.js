@@ -7,14 +7,17 @@ import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+import ApplicantApply from './components/ApplicantApply'
+
+
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <AppNavbar />
+        <AppNavbar/>
         <Container>
-          <CourseModal />
-          <CourseList />
+         <ApplicantApply/>
+         
         </Container>
       </div>
     </Provider>

@@ -2,11 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
-const auth = require('./routes/api/auth.routes.js')
-
+const auth = require('./routes/api/auth.routes.js');
 const courses = require('./routes/api/courses');
-
-
+const applicant=require('./routes/api/applicant');
+var cors = require('cors');
 const app = express();
 
 // Bodyparser Middleware
@@ -15,6 +14,7 @@ app.use(bodyParser.json());
 // DB Config
 const db = require('./config/keys').mongoURI;
 
+
 // Connect to Mongo
 mongoose
     .connect(db, { useNewUrlParser: true }) // Adding new mongo url parser
@@ -22,13 +22,16 @@ mongoose
     .catch(err => console.log(err));
 
 mongoose.set('debug', true);
+app.use(cors({ origin: 'http://localhost:3000/', credentials: true }));
 
 // Use Routes
 app.use('/api/courses', courses);
 app.use(express.json());
 app.use('/api/auth', auth);
+app.use('/api/applicant',applicant)
 
-// Serve static assets if in production
+
+
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
     app.use(express.static('client/build'));
