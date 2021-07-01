@@ -9,7 +9,6 @@ const bcrypt = require('bcrypt')
 const router = express.Router();
 //import userSchema from '../../models/users.js'
 const userSchema= require('../../models/users.js')
-
 //import authorize from '../../middlewares/auth.js'
 const authorize = require('../../middlewares/auth.js')
 //import { check, validationResult } from 'express-validator'

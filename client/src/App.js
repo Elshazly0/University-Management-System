@@ -8,10 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Createschedule from './components/createSchedule';
 import ViewSchedule from './components/viewSchedule';
-import ApplicantApply from './components/ApplicantApply'
+import Coursegrades from './components/Coursegrades'
+import ApplicantApply from './components/ApplicantApply';
 import  Router  from '../src/Router';
 import axios from 'axios';
 import {useHistory} from 'react-router-dom';
+import Viewstudentsgrades from './components/Viewstudentsgrades';
 
 
 axios.defaults.withCredentials=true;
@@ -24,7 +26,7 @@ function App() {
       <div className="App">
         <AppNavbar/>
         <Container>
-         <Router/>
+        <Router/>
         </Container>
       </div>
     </Provider>

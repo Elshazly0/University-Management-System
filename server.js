@@ -8,7 +8,7 @@ const applicant=require('./routes/api/applicant');
 var cors = require('cors');
 const app = express();
 const scheduleroutes = require ('./routes/api/schedule'); 
-
+const coursegrades = require('./routes/api/Coursegrades')
 // Bodyparser Middleware
 app.use(bodyParser.json());
 
@@ -31,7 +31,7 @@ app.use(express.json());
 app.use('/api/auth', auth);
 app.use('/api/applicant',applicant)
 app.use('/api/schedule',scheduleroutes);
-
+app.use('/api/Coursegrades' , coursegrades);
 
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
