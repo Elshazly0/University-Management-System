@@ -9,16 +9,22 @@ import './App.css';
 import Createschedule from './components/createSchedule';
 import ViewSchedule from './components/viewSchedule';
 import ApplicantApply from './components/ApplicantApply'
+import  Router  from '../src/Router';
+import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 
+
+axios.defaults.withCredentials=true;
 
 function App() {
+  let history = useHistory();
+  
   return (
     <Provider store={store}>
       <div className="App">
         <AppNavbar/>
         <Container>
-         <CourseList></CourseList>
-         <CourseModal></CourseModal>
+         <Router/>
         </Container>
       </div>
     </Provider>

@@ -18,7 +18,7 @@ const { check, validationResult } = require('express-validator') ;
 
 
 // User Signin
-router.post('/signin-user', (req, res, next) => {
+router.post('/login', (req, res, next) => {
   let getUser;
   userSchema
     .findOne({
@@ -64,7 +64,7 @@ router.post('/signin-user', (req, res, next) => {
 
 // Signup User
 router.post(
-  '/register-user',
+  '/register',
   [
     check('name')
       .not()
@@ -145,5 +145,3 @@ router.route('/delete-user/:id').delete((req, res, next) => {
 
 module.exports = router;
 //export default router;
-
-
